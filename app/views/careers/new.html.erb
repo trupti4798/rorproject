@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box{
+	width:200px;
+	height:270px;
+	position:static;
+	z-index:1;
+	border:2px solid black;
+	max-width:360px;
+	margin-left:450px;
+	padding:40px;
+	text-align:center;
+	width:60%;
+	margin-top: 110px;
+	
+
+}
+
+</style>
+</head>
+
+<body>
+
+<%= form_for(:careers,url: {controller:"careers", action: 'add'}) do |t| %>
+
+     
+<div class='box'>
+    <table>
+    <tr><th>Name:</th> <td><%= t.text_field(:name) %></td></tr>
+	<tr><th>Dept:</th><td> <%= t.text_field(:dept) %></td></tr>
+	<tr><th>Experience:</th><td> <%= t.text_field(:experience) %></td></tr>
+	<tr><th>Skills:</th><td> <%= t.text_field(:skills) %></td></tr>
+	<tr><th>Qualification:</th><td> <%= t.text_field(:qualification) %></td></tr>
+	<tr><th>Mobile_no:</th><td> <%= t.text_field(:mobile_no) %></td></tr>
+	<tr><th>Email:</th><td> <%= t.text_field(:email) %></td></tr>
+	<tr><th>Address:</th><td> <%= t.text_field(:address) %></td></tr>
+    </table>
+	
+	<center><%= submit_tag("APPLY") %></center><br>
+
+	<center><button><%= link_to "Home", controller:"sessions", action:'welcome'%></button></center>
+
+
+
+</div>
+
+ 
+
+<% end %>
+
+
+</body>
+</html>

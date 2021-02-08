@@ -1,0 +1,132 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.sidenav{
+	height:100%;
+    width:230px;
+	z-index:1;
+	top:0;
+	left:0;
+	background-color:#DAF7A6;
+	overflow-x:hidden;
+	padding-top:60px;
+	position:fixed;
+}	
+	
+.sidenav a {
+	padding:15px 15px 15px 15px;
+	text-decoration:none;
+	
+	display:block;
+	color:#818181;
+	font-size:25px;
+}
+
+.sidenav a:hover{
+	text-decoration:black;
+}
+
+
+.content{
+	margin-left:230px;
+	
+}
+
+
+table,td,th{
+    border:1px solid;
+	text-align: center;
+	padding:15px;
+	border-collapse: collapse;
+	}
+
+
+button{
+	border:1px solid;
+	border-radius: 5px;
+	font-size:15px;
+	margin-top: 5px;
+}
+
+
+
+	
+</style>
+
+</head>
+
+<body>
+<header>
+<nav class="sidenav">
+
+<!-- sidenav overlay-->
+
+
+<ul style="list-style-type:none">
+
+<li><%= link_to "Home", controller:"sessions", action:'welcome' %></li>
+
+<% if current_user && current_user.admin %>
+<li><%= link_to "Employees", controller:"employees", action:'list' %></li>
+<li><%= link_to "Career", controller:"careers", action:'list' %></li>
+<% end %>
+
+<li><%= link_to "Services ", controller: "servs", action: 'index' %></li>
+<li><%= link_to "Partners", controller:"partners", action:'list' %></li>
+<li><%= link_to "About us", controller:"home", action:'about' %></li>
+<li><%= link_to "career", controller:"careers", action:'apply' %></li>
+
+<li><%= link_to "Log Out ", controller: "sessions", action: 'destroy' %></li>
+
+</ul>
+
+
+
+</nav>
+
+</header>
+
+<body>
+
+<div class="content">
+<h1>Partners</h1>
+
+<table>
+
+<% @partners.each do |c| %>
+
+
+<tr>
+    <td><%= c.name %></td>
+
+    <% if current_user && current_user.admin %>
+      
+    
+    <td><button><%= link_to "Show", action:'show', id: c.id, class: "action show" %></button>
+    <button><%= link_to "Delete", action:'delete', id: c.id, class: "action delete" %></button>
+    <button><%= link_to "Edit", action:'edit', id: c.id, class: "action edit" %></button></td>	
+   
+
+</tr>
+ <% end %>
+
+<% end %>
+</table>
+ <% if current_user && current_user.admin %>
+<button><%= link_to "ADD", {:action => 'new',:controller => 'partners'}%></button>
+ <% end %>
+</div>
+</body>
+</html>

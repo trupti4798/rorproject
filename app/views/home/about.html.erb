@@ -1,0 +1,102 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.sidenav{
+	height:100%;
+    width:230px;
+	top:0;
+	left:0;
+	background-color:#DAF7A6;
+	overflow-x:hidden;
+	padding-top:60px;
+	position:fixed;
+}	
+	
+.sidenav a {
+	padding:15px 15px 15px 15px;
+	text-decoration:none;
+	
+	display:block;
+	color:#818181;
+	font-size:25px;
+}
+
+.sidenav a:hover{
+	text-decoration:black;
+}
+
+
+.content{
+	margin-left:230px;
+}
+
+	
+</style>
+
+</head>
+
+<body>
+<header>
+
+<nav class="sidenav">
+
+<!-- sidenav overlay-->
+
+
+<ul style="list-style-type:none">
+	
+<li><%= link_to "Home", controller:"sessions", action:'welcome' %></li>
+<li><%= link_to "Services ", controller: "servs", action: 'index' %></li>
+<li><%= link_to "Partners", controller:"partners", action:'list' %></li>
+<li><%= link_to "About us", controller:"home", action:'about' %></li>
+<li><%= link_to "career", controller:"careers", action:'apply' %></li>
+
+<li><%= link_to "Log Out ", controller: "sessions", action: 'destroy' %></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<div class="content">
+
+<h1>About us</h1>
+
+<h2>A global leader in consulting, technology services and digital transformation.</h2>
+  <h2>webitlife is at the forefront of innovation to address the entire breadth of clients’<br> opportunities in the evolving world of cloud, digital and platforms.</h2>
+
+<h2>Values & Ethics</h2>
+
+<h3>Honesty<br>
+Freedom<br>
+Fun<br>
+Trust<br>
+Team spirit<br></h3>
+
+<h2>Our Purpose</h2>
+<h3>Unleashing human energy through technology for an inclusive and sustainable future.</h3>
+
+<h2>Contact us</h2>
+<h3>Mail : webItLife@gmail.com</h3>
+<h3>Contact-no : 9864535367 </h3>
+
+
+</div>
+
+
+</body>
+</html>

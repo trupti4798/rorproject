@@ -1,0 +1,75 @@
+<html>
+<head>
+
+<style>
+
+body{
+  background-image:url("/assets/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box{
+  width:200px;
+  height:230px;
+  position:static;
+  z-index:1;
+  border:2px solid black;
+  max-width:360px;
+  margin-left:550px;
+  padding:40px;
+  text-align:center;
+  width:60%;
+  margin-top: 100px;
+  
+}
+
+box button{
+  outline:0;
+  margin-top:15px;
+    width:50%;
+   
+  
+}
+
+
+
+</style>
+
+</head> 
+<body>
+
+<div class="box">
+
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @partner.name %>
+</p>
+
+<p>
+  <strong>Services:</strong>
+  <%= @partner.services %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @partner.duration %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @partner.email %>
+</p>
+
+
+ <%= link_to "Back to list", controller:"partners", action:'list', class: "back-link" %>
+
+</div>
+
+
+</body>
+</html>

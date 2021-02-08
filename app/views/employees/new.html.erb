@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box{
+	width:200px;
+	height:400px;
+	position:static;
+	z-index:1;
+	border:2px solid black;
+	max-width:360px;
+	margin-left:550px;
+	padding:40px;
+	text-align:center;
+	width:60%;
+	margin-top: 100px;
+	
+}
+
+box button{
+	outline:0;
+	margin-top:15px;
+    width:50%;
+   
+	
+}
+
+
+
+</style>
+
+</head>	
+<body>
+
+<div class="box">
+	<h2>Add New Record</h2>
+
+	<%= form_for(:employees,url: {controller:"employees", action: 'add'}) do |t| %>
+     
+<table>
+    <tr><th>Name:</th> <td><%= t.text_field(:name) %></td></tr>
+	<tr><th>Dept:</th><td> <%= t.text_field(:dept) %></td></tr>
+	<tr><th>Salary:</th><td> <%= t.text_field(:salary) %></td></tr>
+	<tr><th>Email:</th><td> <%= t.text_field(:email) %></td></tr>
+	<tr><th>Mobile_no:</th><td> <%= t.text_field(:mobile_no) %></td></tr>
+	<tr><th>Gender:</th><td><%= t.text_field(:gender) %></td></tr>
+	<tr><th>Address:</th><td> <%= t.text_field(:addr) %></td></tr>
+	<tr><th>Image:</th><td> <%= t.file_field(:image) %></td></tr>
+</table>
+	
+	<%= submit_tag("Add Record") %><br>
+
+  <%= link_to "Back to list", controller:"employees", action:'list', class: "back-link" %>
+
+<% end %>
+
+</div>
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,94 @@
+<html>
+<head>
+
+<style>
+
+body{
+  background-image:url("/assets/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box{
+  width:200px;
+  height:430px;
+  position:static;
+  z-index:1;
+  border:2px solid black;
+  max-width:360px;
+  margin-left:550px;
+  padding:40px;
+  text-align:center;
+  width:60%;
+  margin-top: 100px;
+  
+}
+
+box button{
+  outline:0;
+  margin-top:15px;
+    width:50%;
+   
+  
+}
+
+
+
+</style>
+
+</head> 
+<body>
+
+<div class="box">
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%if @employee.image.attached? %>
+  <%= image_tag(@employee.image, style: 'width:50%') %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @employee.dept %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @employee.salary %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</p>
+
+<p>
+  <strong>Mobile no:</strong>
+  <%= @employee.mobile_no %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @employee.gender %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @employee.addr %>
+</p>
+
+ <%= link_to "Back to list", controller:"employees", action:'list', class: "back-link" %>
+
+</div>
+
+
+</body>
+</html>

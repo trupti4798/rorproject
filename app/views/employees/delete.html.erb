@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.box{
+	width:300px;
+	height:300px;
+	position:static;
+	z-index:1;
+	border: 5px solid black ;
+	max-width:360px;
+	margin:0 auto 100px;
+	margin-left:500px;
+	padding:45px;
+	text-align:center;
+	width:60%;
+	margin-top: 90px;
+	
+}
+
+button{
+	border:1px solid;
+	border-radius: 5px;
+	font-size:15px;
+	margin-top: 15px;
+}
+
+</style>
+</head>
+<body>
+<div class="box">
+
+<h1>Delete Record</h1>
+
+<%= form_for(:employees, url: {action: 'destroy' , id: @employee.id} ) do |t| %>
+
+<p><h3><strong>Are you sure you want to permantly delete this record?</strong></h3></p>
+
+<p class= "refernce-name"><h3> <%= @employee.name %></h3></p>
+
+<div class ="form-button">
+
+<%= submit_tag("Delete Record") %>
+
+</div>
+
+<button><%= link_to 'Back to list', {controller: 'employees', :action => 'list' , class: 'back-link'} %></button>
+
+</div>
+<% end %>
+
+</body>
+</html>

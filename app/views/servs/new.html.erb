@@ -1,0 +1,46 @@
+<html>
+<head>
+
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box{
+	width:200px;
+	height:400px;
+	position:static;
+	z-index:1;
+	border:2px solid black;
+	max-width:360px;
+	margin-left:550px;
+	padding:40px;
+	text-align:center;
+	width:60%;
+	margin-top: 100px;
+	
+}
+
+
+
+
+</style>
+
+</head> 
+<body>
+
+<div class="box">
+
+<h1>New Serv</h1>
+
+<%= render 'form', serv: @serv %>
+
+<%= link_to 'Back', servs_path %>
+
+
+</div>
+</body>
+</html>

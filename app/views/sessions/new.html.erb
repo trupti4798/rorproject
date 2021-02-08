@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+
+body{
+	background-image:url("/assets/loginbg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box{
+	width:200px;
+	height:250px;
+	position:static;
+	z-index:1;
+	border:2px solid black;
+	max-width:360px;
+	margin-left: auto;
+	padding:40px;
+	text-align:center;
+	width:60%;
+	margin-right:auto;
+	
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<p id='alert'><%= alert %></p>
+<h1>Login</h1>
+<%= form_tag sessions_path do |form| %>
+ <div class='field'>
+   <%= label_tag :email %>
+   <%= text_field_tag :email %>
+ </div>
+ <div class='field'>
+   <%= label_tag :password %>
+   <%= password_field_tag :password %>
+ </div>
+ <div class='actions'>
+   <%= submit_tag 'Login' %>
+ </div>
+<% end %>
+
+</div>
+</body>
+</html>

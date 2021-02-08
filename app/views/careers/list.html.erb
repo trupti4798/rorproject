@@ -1,0 +1,155 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+	
+.sidenav{
+	height:100%;
+    width:230px;
+	z-index:1;
+	top:0;
+	left:0;
+	background-color:#DAF7A6;
+	overflow-x:hidden;
+	padding-top:60px;
+	position:fixed;
+}	
+	
+.sidenav a {
+	padding:15px 15px 15px 15px;
+	text-decoration:none;
+	
+	display:block;
+	color:#818181;
+	font-size:25px;
+}
+
+.sidenav a:hover{
+	text-decoration:black;
+}
+
+
+.content{
+	margin-left:230px;
+	
+}
+
+
+table,td,th{
+    border:1px solid;
+	text-align: center;
+	padding:15px;
+	border-collapse: collapse;
+	}
+
+
+button{
+	border:1px solid;
+	border-radius: 5px;
+	font-size:15px;
+	margin-top: 5px;
+}
+
+
+
+	
+</style>
+
+</head>
+
+<body>
+<header>
+
+<nav class="sidenav">
+
+<!-- sidenav overlay-->
+
+
+<ul style="list-style-type:none">
+
+<li><%= link_to "Home", controller:"sessions", action:'welcome' %></li>
+
+<% if current_user && current_user.admin %>
+<li><%= link_to "Employees", controller:"employees", action:'list' %></li>
+<li><%= link_to "Career", controller:"careers", action:'list' %></li>
+<% end %>
+
+
+<li><%= link_to "Services ", controller: "servs", action: 'index' %></li>
+<li><%= link_to "Partners", controller:"partners", action:'list' %></li>
+<li><%= link_to "About us", controller:"home", action:'about' %></li>
+<li><%= link_to "career", controller:"careers", action:'apply' %></li>
+
+
+
+
+<li><%= link_to "Log Out ", controller: "sessions", action: 'destroy' %></li>
+
+
+
+</nav>
+
+</header>
+
+<body>
+
+<div class="content">
+
+<h1>career</h1>
+
+<% if current_user && current_user.admin %>
+<h4>There are <%=  Career.count %> applications</h4>
+
+<table>
+<tr>
+	<th>Name</th>
+	<th>Dept</th>
+	<th>Experience</th>
+	<th>Skills</th>
+	<th>Qualifications</th>
+	<th>Mobile_no</th>
+	<th>Email</th>
+	<th>Address</th>
+	
+</tr>
+	
+
+<% @careers.each do |c| %>
+
+
+<tr>
+	<td><%= c.name %></td>
+    <td><%= c.dept %></td>
+    <td><%= c.experience %></td>
+    <td><%= c.skills %></td>
+    <td><%= c.qualification %></td>
+    <td><%= c.mobile_no %></td>
+    <td><%= c.email %></td>
+    <td><%= c.address %></td>
+
+</tr>
+
+<% end %>
+</table>
+
+<% end %>
+
+
+
+<h1>Applied Successfully</h1>
+
+
+
+</div>
+</body>
+</html>

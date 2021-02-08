@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+
+body{
+	background-image:url("/assets/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box{
+	width:200px;
+	height:270px;
+	position:static;
+	z-index:1;
+	border:2px solid black;
+	max-width:360px;
+	margin-left:450px;
+	padding:40px;
+	text-align:center;
+	width:60%;
+	margin-top: 110px;
+	
+
+}
+
+</style>
+
+<body>
+
+<%= form_for(:partners,url: {controller:"partners", action: 'add'}) do |t| %>
+     
+<div class='box'>
+    <table>
+    <tr><th>Name:</th> <td><%= t.text_field(:name) %></td></tr>
+	<tr><th>Services:</th><td> <%= t.text_field(:services) %></td></tr>
+	<tr><th>Duration:</th><td> <%= t.text_field(:duration) %></td></tr>
+	<tr><th>Email:</th><td> <%= t.text_field(:email) %></td></tr>
+	
+    </table>
+	<% end %>
+	<center><%= submit_tag("ADD") %></center><br>
+	
+
+	<center><button><%= link_to "Back to list", controller:"partners", action:'list', class: "back-link" %></button></center
+
+</div>
+
+ 
+
+
+
+
+</body>
+</head>

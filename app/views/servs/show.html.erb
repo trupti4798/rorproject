@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+  background-image:url("/assets/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
+</head>
+<body>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @serv.name %>
+</p>
+
+
+<p>
+  <strong>Info:</strong>
+  <%= @serv.info %>
+</p>
+
+<%= image_tag(@serv.image, style: 'width:50%') %><br>
+
+
+
+
+<%= link_to 'Back', servs_path %>
+</body>
+</html>
